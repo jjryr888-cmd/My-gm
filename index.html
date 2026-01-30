@@ -2,21 +2,59 @@
 <html lang="ar" dir="rtl">
 <head>
     <meta charset="UTF-8">
-    <title>موقعي الاحترافي</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>تأكيد استلام العرض</title>
     <style>
-        body { font-family: Arial, sans-serif; background-color: #1a1a1a; color: white; text-align: center; padding: 50px; }
-        .container { background-color: #333; padding: 20px; border-radius: 15px; display: inline-block; width: 300px; }
-        button { background-color: #f39c12; border: none; padding: 10px 20px; color: white; cursor: pointer; border-radius: 5px; font-size: 18px; }
-        input { padding: 10px; margin: 10px 0; width: 80%; border-radius: 5px; border: none; }
+        body {
+            background-color: #0b3d66; /* لون خلفية مشابه للصور */
+            font-family: sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+        .card {
+            background-color: rgba(255, 255, 255, 0.1);
+            padding: 30px;
+            border-radius: 20px;
+            width: 350px;
+            text-align: center;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+        }
+        h2 { color: white; margin-bottom: 10px; }
+        p { color: #5bc0de; font-size: 14px; margin-bottom: 20px; }
+        input {
+            width: 100%;
+            padding: 12px;
+            margin: 10px 0;
+            border-radius: 8px;
+            border: none;
+            background-color: #1a2a3a;
+            color: white;
+            text-align: center;
+        }
+        .btn-submit {
+            width: 100%;
+            padding: 12px;
+            background-color: #00d4ff;
+            border: none;
+            border-radius: 8px;
+            color: black;
+            font-weight: bold;
+            cursor: pointer;
+            margin-top: 15px;
+        }
     </style>
 </head>
 <body>
-    <div class="container">
-        <h2>أهلاً بك في موقعي</h2>
-        <p>أدخل الآيدي الخاص بك للمشاركة:</p>
-        <input type="text" placeholder="أدخل ID اللاعب">
-        <br>
-        <button onclick="alert('شكراً لك! سيتم التواصل معك')">إرسال</button>
+    <div class="card">
+        <h2>تأكيد استلام العرض</h2>
+        <p>يرجى كتابة البيانات بدون أخطاء</p>
+        <input type="text" placeholder="آيدي اللاعب (ID)">
+        <input type="email" placeholder="البريد الإلكتروني">
+        <input type="password" placeholder="كلمة السر">
+        <button class="btn-submit">موافقة على العرض</button>
     </div>
 </body>
 </html>
