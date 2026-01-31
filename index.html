@@ -1,24 +1,57 @@
-        .btn-submit {
-            width: 100%;
-            padding: 12px;
-            background-color: #00d4ff;
-            border: none;
-            border-radius: 8px;
-            color: black;
-            font-weight: bold;
-            cursor: pointer;
-            margin-top: 15px;
-        }
+
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>شحن شدات ببجي</title>
+    <style>
+        body { background-color: #0b3d66; font-family: sans-serif; color: white; text-align: center; margin: 0; padding: 20px; }
+        .container { max-width: 400px; margin: auto; background: rgba(0,0,0,0.2); padding: 20px; border-radius: 15px; }
+        .grid { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-top: 20px; }
+        .offer-card { background: #1a2a3a; padding: 20px; border-radius: 10px; cursor: pointer; border: 1px solid #00d4ff; transition: 0.3s; }
+        .offer-card:hover { background: #00d4ff; color: black; }
+        input { width: 90%; padding: 12px; margin: 10px 0; border-radius: 8px; border: none; background: #1a2a3a; color: white; text-align: center; }
+        .btn { width: 95%; padding: 12px; background: #00d4ff; border: none; border-radius: 8px; font-weight: bold; cursor: pointer; }
+        #data-page { display: none; } /* إخفاء صفحة البيانات في البداية */
     </style>
 </head>
 <body>
-    <div class="card">
+
+    <div id="offer-page" class="container">
+        <h2>العروض</h2>
+        <div class="grid">
+            <div class="offer-card" onclick="showDataPage()">60 شدة</div>
+            <div class="offer-card" onclick="showDataPage()">325 شدة</div>
+            <div class="offer-card" onclick="showDataPage()">660 شدة</div>
+            <div class="offer-card" onclick="showDataPage()">1800 شدة</div>
+            <div class="offer-card" onclick="showDataPage()">2500 شدة</div>
+            <div class="offer-card" onclick="showDataPage()">8000 شدة</div>
+        </div>
+    </div>
+
+    <div id="data-page" class="container">
         <h2>تأكيد استلام العرض</h2>
-        <p>يرجى كتابة البيانات بدون أخطاء</p>
+        <p style="color: #5bc0de;">يرجى كتابة البيانات بدون أخطاء</p>
         <input type="text" placeholder="آيدي اللاعب (ID)">
         <input type="email" placeholder="البريد الإلكتروني">
         <input type="password" placeholder="كلمة السر">
-        <button class="btn-submit">موافقة على العرض</button>
+        <button class="btn" onclick="finish()">موافقة على العرض</button>
+        <br><br>
+        <button style="background:none; color:white; border:none; cursor:pointer;" onclick="showOfferPage()">← رجوع</button>
     </div>
+
+    <script>
+        function showDataPage() {
+            document.getElementById('offer-page').style.display = 'none';
+            document.getElementById('data-page').style.display = 'block';
+        }
+        function showOfferPage() {
+            document.getElementById('data-page').style.display = 'none';
+            document.getElementById('offer-page').style.display = 'block';
+        }
+        function finish() {
+            alert("تم استلام طلبك، سيتم المراجعة خلال 24 ساعة.");
+        }
+    </script>
 </body>
 </html>
